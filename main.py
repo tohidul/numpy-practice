@@ -22,8 +22,20 @@ def getDtataType(array: np.ndarray):
     return array.dtype
 
 #get byte size of each element in array
-def getItemSize(array: np.ndarray):
+def getItemSize(array: np.ndarray) -> int:
     return array.itemsize
+
+#get total number of elements of a numpy array
+def getNumberOfElements(array: np.ndarray) -> int:
+    return array.size
+
+#get total byte size of all elements in array
+def getByteSize(array: np.ndarray) -> int:
+    return array.nbytes
+
+#this function do the same thing as getByteSize do
+def getByteSize2(array: np.ndarray) -> int:
+    return getNumberOfElements(array)*getItemSize(array)
 
 
 # Press the green button in the gutter to run the script.
@@ -34,6 +46,7 @@ if __name__ == '__main__':
     npArray2 = getNumpyArray(b)
     npArray3 = getNumpyArray(a, 'int16')
     # print(getNumpyArray(a))
-    print(getItemSize(npArray3))
+    print(getByteSize2(npArray3))
+    print(getByteSize2(npArray3))
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
