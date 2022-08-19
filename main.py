@@ -5,30 +5,35 @@
 
 import numpy as np
 
-
+#convert a python list to a numpy array
 def getNumpyArray(aList: list, dtype = 'int32') -> np.ndarray:
     return np.array(aList, dtype=dtype)
 
+#get the dimention of a numpy array
 def getDiemnsion(npArray: np.ndarray) -> int:
     return npArray.ndim
 
+#get the shape of of a numpy array
 def getShape(npArray: np.ndarray) -> tuple:
     return npArray.shape
 
+#get the data type of the elements in a numpy array
 def getDtataType(array: np.ndarray):
     return array.dtype
+
+#get byte size of each element in array
+def getItemSize(array: np.ndarray):
+    return array.itemsize
 
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     a = [[1,2,3], [45,3,1]]
-    b = [1,2,3,43,5345]
+    b = [1,2,3,43,53,33,1,2]
     npArray = getNumpyArray(a)
-    npArray2 = getNumpyArray(a, 'int8')
+    npArray2 = getNumpyArray(b)
     npArray3 = getNumpyArray(a, 'int16')
     # print(getNumpyArray(a))
-    print(getDtataType(npArray2))
-    print(getDtataType(npArray3))
-    print(getDtataType(npArray))
+    print(getItemSize(npArray3))
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
